@@ -1,3 +1,9 @@
+"""
+Contains the function `fetch_python_code_snippets`
+that gets python code snippets from popular python GitHub repos.
+The fetched snippets are then saved to a cached file.
+"""
+
 import requests
 import json
 
@@ -24,12 +30,15 @@ repositories = [
         {'owner': 'matplotlib', 'repo': 'matplotlib'}
 ]
 
-def fetch_python_code_snippets(owner, repo):
-    """Function to fetch python code snippets from popular repos
+CACHE_FILE = 'cached_code_snippets.json'
+
+def fetch_python_code_snippets(owner, repo, path=''):
+    """
+    Function to fetch python code snippets from popular repos
     on GitHub using the GitHub API
     """
     headers = {'Authorization': f'token {token}'}
-    url = f'https://api.github.com/repos/{owner}/{repo}/contents'
+    url = f'https://api.github.com/repos/{owner}/{repo}/contents/{path}'
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
@@ -46,6 +55,21 @@ def fetch_python_code_snippets(owner, repo):
                     'file_name': content['name'],
                     'content': file_content
                 })
+                print(f"Fetched snippet: {content['name']} from {owner}/{repo}")
+
+            elif content['type'] == 'dir':
+                # Recursively fetch code snippets from files within folders
+                folder_path = f"{path}/{content['name']}"
+                snippets = fetch_python_code_snippets(owner, repo, folder_path)
+                if snippets:
+                    python_code_snippets.extend(snippets)
+
+        # Save the fetched code snippets to a caech file
+        with open(CACHE_FILE, 'a') as cache_file:
+            for snippet in python_code_snippets:
+                json.dump(snippet, cache_file)
+                cache_file.write('\n')
+
         return python_code_snippets
     else:
         print(f'Failed to fetch code snippets for {owner}/{repo}. Status code: {response.status_code}')
@@ -53,6 +77,11 @@ def fetch_python_code_snippets(owner, repo):
 
 
 if __name__ == '__main__':
+    # Check if cache file exists otherwise create it
+    if not os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, 'w') as cache_file:
+            cache_file.write('[') # initialize the JSON array
+
     all_snippets = []
 
     for repo_info in repositories:
@@ -62,8 +91,8 @@ if __name__ == '__main__':
         if snippets:
             all_snippets.extend(snippets)
 
-    # Save code snippets to a JSON file
-    with open('python_code_snippets.json', 'w') as json_file:
-        json.dump(all_snippets, json_file, indent=4)
+    # Save code snippets to a JSON array in the cache file
+    with open(CACHE_FILE, 'a') as cache_file:
+        cache_file.write(']')
 
-    print('Code snippets saved to python_code_snippets.json')
+    print('Code snippets saved to cached_code_snippets.json')
