@@ -1,6 +1,6 @@
 {
     "SkyHigh:Python Snippet": {
-      "prefix": "!def",
+      "prefix": "def",
       "body": [
         "def _function_name(arguments):"
       ],
