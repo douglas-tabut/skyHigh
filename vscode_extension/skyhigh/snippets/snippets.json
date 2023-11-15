@@ -1,0 +1,9 @@
+{
+    "SkyHigh:Python Snippet": {
+      "prefix": "!def",
+      "body": [
+        "def _function_name(arguments):"
+      ],
+      "description": "Python snippet recommender"
+    }
+}
