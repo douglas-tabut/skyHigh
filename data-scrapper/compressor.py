@@ -1,3 +1,8 @@
+"""
+This module compresses the `cached_code_snippets.json` file
+into a zip so it can be pushed to a GitHub repo.
+"""
+
 import json
 import gzip
 import os
