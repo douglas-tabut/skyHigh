@@ -1,11 +1,10 @@
 """
 This module contains the function `normalize_code` that
-normalizes the python code snippets that were saved in the zipped file.
+normalizes the python code snippets from a json file.
 """
 
 import re
 import json
-import gzip
 
 
 def normalize_code(code):
@@ -31,12 +30,11 @@ def normalize_code(code):
 
     return code
 
-input_file = 'cached_code_snippets.json.gz'
+input_file = 'cached_code_snippets.json'
 output_file = 'cleaned_code_snippets.json'
 
-# Decompress the gzipped file
-with gzip.open(input_file, 'rt', encoding='utf-8') as gz_file:
-    code_snippets = json.load(gz_file)
+with open(input_file, 'r', encoding='utf-8') as json_file:
+    code_snippets = json.load(json_file)
 
 cleaned_code_snippets = []
 for snippet in code_snippets:
