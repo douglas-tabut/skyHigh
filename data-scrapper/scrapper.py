@@ -45,6 +45,7 @@ def fetch_python_code_snippets(owner, repo, path=''):
         contents = response.json()
         python_code_snippets = []
 
+        # To-Do: Implement parallelizarion instead of caching using concurrent.futures.ThreadPoolExecutir()
         for content in contents:
             if content['type'] == 'file' and content['name'].endswith('.py'):
                 # Fetch the content of Python files
