@@ -13,13 +13,16 @@ const cohere = new CohereClient({
     token: "K3P7ftTGY9vkkGreskxCXBYXgGAqIFtk4OihSFcE",
 });
 
-(async () => {
+
+async function code_generator() {
     const prediction = await cohere.generate({
         prompt: PROMPT,
         maxTokens: 300,
     });
     
-    console.log(prediction.generations[0].text); 
-})();
+    let output = prediction.generations[0].text;
+    console.log(ouput)
+    return output;
+};
 
-
+export default code_generator;
