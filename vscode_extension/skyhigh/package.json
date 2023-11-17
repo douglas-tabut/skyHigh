@@ -16,5 +16,9 @@
         "path": "./snippets/snippets.json"
       }
     ]
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cohere-ai": "^7.2.0"
   }
 }
