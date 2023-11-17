@@ -5,5 +5,28 @@
         "def _function_name(arguments):"
       ],
       "description": "Python snippet recommender"
+    },
+    "test": {
+      "prefix": "import",
+      "body": [
+        "import p from pandas"
+      ],
+      "description": "Python snippet recommender"
+    },
+    "object-key":{
+      "prefix":"code-to-search",
+      "body":[
+        "code suggested"
+      ],
+      "description": "Python"
+
+    },
+    "object-key2":{
+      "prefix":"code-to-search-second-iteration",
+      "body":[
+        "code suggested second time"
+      ],
+      "description": "Python"
+
     }
 }
