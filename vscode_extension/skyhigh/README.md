@@ -1,65 +1,46 @@
-# skyhigh README
+# SkyHigh Code Recommender - VSCode Extension
 
-This is the README for your extension "skyhigh". After writing up a brief description, we recommend including the following sections.
+## Overview
+
+Welcome to the SkyHigh Code Recommender, a Visual Studio Code (VSCode) extension developed by our hackathon team. This extension leverages machine learning techniques to enhance your Python coding experience, providing contextually relevant code examples to improve coding efficiency and promote knowledge sharing within the developer community.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **AI-Driven Recommendations**: Benefit from AI-powered code snippet recommendations based on your coding context.
+- **Efficiency Boost**: Save time by quickly discovering and incorporating relevant code snippets into your Python projects.
+- **Knowledge Sharing**: Contribute to and benefit from a growing library of community-sourced code snippets.
+- **Seamless Integration**: Enjoy a smooth integration into your VSCode environment with easy-to-use features.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Open VSCode.
+2. Go to the Extensions view (`Ctrl + Shift + X`).
+3. Search for "SkyHigh Code Recommender".
+4. Install the extension.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+1. Open a Python file in VSCode.
+2. Position the cursor where you want a code snippet recommendation.
+3. Trigger the extension (e.g., using a keyboard shortcut).
+4. Explore and choose from the recommended code snippets.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Contributing
 
-## Extension Settings
+Contributions are welcome! If you have a great code snippet or want to improve the extension, follow these steps:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
 
-For example:
+## Feedback and Issues
 
-This extension contributes the following settings:
+If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/douglas-tabut/skyHigh/issues). Your feedback is valuable.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## License
 
-## Known Issues
+This project is licensed under the [MIT License](LICENSE).
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Happy coding with SkyHigh Code Recommender!

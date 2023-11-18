@@ -4,7 +4,7 @@
   "description": "Python Code Snippet Recommender",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": ">=1.70.0"
   },
   "categories": [
     "Snippets"
@@ -20,5 +20,9 @@
   "dependencies": {
     "axios": "^1.6.2",
     "cohere-ai": "^7.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douglas-tabut/skyHigh/tree/dev/vscode_extension/skyhigh"
   }
 }
