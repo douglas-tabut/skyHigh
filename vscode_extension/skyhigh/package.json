@@ -1,0 +1,24 @@
+{
+  "name": "skyhigh",
+  "displayName": "SkyHigh",
+  "description": "Python Code Snippet Recommender",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cohere-ai": "^7.2.0"
+  }
+}
