@@ -1,12 +1,611 @@
 {
-    "SkyHigh:Python Snippet": {
-      "prefix": "def",
-      "body": [
-        "def _function_name(arguments):"
-      ],
-      "description": "Python snippet recommender"
-    }
-
+  "skyHigh:html_show_copyright": {
+    "prefix": "html_show_copyright",
+    "body": [
+      "import datetime\n\ncurrent_year = datetime.datetime.now().year\ncopyright_message = f\"Copyright 2023 {current_year} My Website\"\n\nhtml_copyright = f'<p>{copyright_message}</p>'\n\nprint(html_copyright)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:pygments_style": {
+    "prefix": "pygments_style",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:todo_include_todos": {
+    "prefix": "todo_include_todos",
+    "body": [
+      "def include_todos(directory):\n        files = [file for file in os.listdir(directory) if os.path.isfile(os.path.join(directory, file))]\n    \n        todos = []\n    \n        for file in files:\n                if file.endswith(\".md\"):\n            with open(os.path.join(directory, file), \"r\") as f:\n                todos.append(f.read())\n    \n        return todos"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_static_path": {
+    "prefix": "html_static_path",
+    "body": [
+      "html_static_path = \"/path/to/your/static/files\""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_show_sourcelink": {
+    "prefix": "html_show_sourcelink",
+    "body": [
+      "import html\ndef show_source_link(html_text):\n    \n    anchor = '<a href=\"javascript:void(0);\" class=\"show-source\" onclick=\"displaySource(\\'' + html.escape(html_text) + '\\')\">Show source</a>'\n    return html_text + anchor"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_theme_options": {
+    "prefix": "html_theme_options",
+    "body": [
+      "import json\n\nhtml_theme_options = {\n    \"navigation_bar_title\": \"My Blog\",\n    \"sidebar_layout\": \"normal\",\n    \"show_related_posts\": True,\n    \"related_posts_count\": 10,\n    \"google_analytics_id\": \"YOUR_GA_ID\",\n}\n\njson.dump(html_theme_options, open(\"html_theme_options.json\", \"w\"), indent=4)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_theme": {
+    "prefix": "html_theme",
+    "body": [
+      "import notebook\nnotebook.notebook_env.default_theme = 'theme_name'"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_use_smartypants": {
+    "prefix": "html_use_smartypants",
+    "body": [
+      "from html import htmlentitydefs\nfrom html.parser import HTMLParser\n\nclass Smartypants(HTMLParser):\n    def handle_entity(self, entity):\n        num = htmlentitydefs.name2codepoint[entity]\n        self.result.append(chr(num))\n\ndef smartypants_html(html):\n    parser = Smartypants(html)\n    parser.result = []\n    parser.feed(html)\n    return ''.join(parser.result)\n\nhtml = '''\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mauris augue, commodo id est in, tincidunt egestas lacus.\n'''\n\nprint(smartypants_html(html))"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_sidebars": {
+    "prefix": "html_sidebars",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:html_show_sphinx": {
+    "prefix": "html_show_sphinx",
+    "body": [
+      "from sphinx.builders.html import StandaloneHTMLBuilder\n\nhtml_theme = 'basic'\n\nbuilder = StandaloneHTMLBuilder()\n\ndocwriter = builder.build_doc(source='source', outdir='_build/html')"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:intersphinx_mapping": {
+    "prefix": "intersphinx_mapping",
+    "body": [
+      "intersphinx_mapping = {\n    \"python\": (\"https://docs.python.org/3/\", None),\n    \"numpy\": (\"https://numpy.org/doc/stable/\", None),\n    \"matplotlib\": (\"https://matplotlib.org/stable/\", None),\n}"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:epub_title": {
+    "prefix": "epub_title",
+    "body": [
+      "import epublib\n\ndef get_title(epub_file):\n    epub_reader = epublib.EpubReader(epub_file)\n    title = epub_reader.title\n    return title\n\nepub_file = 'epub_file.epub'\ntitle = get_title(epub_file)\nprint(title)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:man_pages": {
+    "prefix": "man_pages",
+    "body": [
+      "import subprocess\ndef print_man_pages():\n    man_pages = [\"ls\", \"pwd\", \"touch\"]\n    for page in man_pages:\n        try:\n            subprocess.check_call([\"man\", page])\n            print(f\"Man page for {page} found and displayed.\")\n        except subprocess.CalledProcessError:\n            print(f\"Man page for {page} not found.\")\n    return\n\nif __name__ == \"__main__\":\n    print_man_pages()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:texinfo_documents": {
+    "prefix": "texinfo_documents",
+    "body": [
+      "import subprocess\n\nwith open(\"document.txt\", \"r\") as file:\n    text = file.read()\n\nsubprocess.run([\"makeinfo\", \"-o\", \"output.info\", \"--no-split\", \"-I\", \"texinfo_documents\", \"--\", \"-s\", \"-R\", \"-T\", \"python\", text])"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:epub_publisher": {
+    "prefix": "epub_publisher",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:epub_copyright": {
+    "prefix": "epub_copyright",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:epub_author": {
+    "prefix": "epub_author",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:latex_documents": {
+    "prefix": "latex_documents",
+    "body": [
+      "import latex\nlatex_documents = []\n\nlatex_documents.append(\"document1.tex\")\nlatex_documents.append(\"document2.tex\")\n\nfor document in latex_documents:\n    latex.compile(document)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:epub_exclude_files": {
+    "prefix": "epub_exclude_files",
+    "body": [
+      "excluded_files = ['index.html', 'css/style.css']\nepub_exclude_files = excluded_files"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:latex_elements": {
+    "prefix": "latex_elements",
+    "body": [
+      "import random\n\ndef latex_elements():\n    latex_elements = []\n    for i in range(5):\n        element = random.choice([\"em\", \"strong\", \"span\", \"del\", \"sub\"])\n        latex_elements.append(f\"\\\\{element}{{{i+1}}}\")\n    return latex_elements\n\nelements = latex_elements()\nprint(elements)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:items_to_strip": {
+    "prefix": "items_to_strip",
+    "body": [
+      "def strip_whitespace(items):\n    return [item.strip() for item in items]\n\nitems_list = ['  hello  ', '    world    ', '   goodbye   ', '     universe   ']\nitems_to_strip = strip_whitespace(items_list)\nprint(items_to_strip)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:index_of_equals": {
+    "prefix": "index_of_equals",
+    "body": [
+      "index_of_equals = string.find('=')"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:param": {
+    "prefix": "param",
+    "body": [
+      "def print_param(param):\n    print(param)\n\nprint_param(param)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:find": {
+    "prefix": "find",
+    "body": [
+      "def find_max_value(num_list):\n    max_value = num_list[0]\n    for num in num_list:\n        if num > max_value:\n            max_value = num\n    return max_value\n\nnumber_list = [5, 12, 8, 25, 3, 15]\nprint(\"The maximum value in the list is:\", find_max_value(number_list))"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:xml_re": {
+    "prefix": "xml_re",
+    "body": [
+      "import re\n\nxml_pattern = re.compile(r\"<(\\w+)(?:\\s+(.*?))?>\", re.IGNORECASE)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:params_dict": {
+    "prefix": "params_dict",
+    "body": [
+      "def params_to_list(params_dict):\n    return [{\"param_name\": param_name, \"param_value\": params_dict[param_name]} for param_name in params_dict]"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:tokens": {
+    "prefix": "tokens",
+    "body": [
+      "import tokenize\n\ndef generate_tokens(string):\n    tokens = tokenize.tokenize(string)\n    return tokens\n\ninput_string = \"import this module to tokenize strings\"\ntokens = generate_tokens(input_string)\nprint(tokens)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:_parse_content_type_header": {
+    "prefix": "_parse_content_type_header",
+    "body": [
+      "import mimetypes\n\ndef parse_content_type_header(header):\n    content_type, options = header.split(';', 1)\n    base_type, sub_type = content_type.split('/', 1)\n    \n    if base_type == 'text':\n        return mimetypes.types_map[sub_type]\n    \n    return '{}.{}'.format(base_type, sub_type)\n\ncontent_type_header = 'text/html; charset=utf-8'\nparsed_content_type = parse_content_type_header(content_type_header)\nprint(parsed_content_type)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:findall": {
+    "prefix": "findall",
+    "body": [
+      "import re\ntext = \"Hello, my name is John and I live in Toronto. I like playing basketball and soccer\"\n\npattern = r'\\b(\\w+)\\s+(\\w+)\\b'\nnames = re.findall(pattern, text)\n\nprint(names)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:iterator": {
+    "prefix": "iterator",
+    "body": [
+      "class Iterator:\n    def __init__(self, nums):\n        self.nums = nums\n        self.index = 0\n\n    def __iter__(self):\n        self.index = 0\n        return self\n\n    def __next__(self):\n        if self.index < len(self.nums):\n            result = self.nums[self.index]\n            self.index += 1\n            return result\n        else:\n            raise StopIteration\n\nmy_iter = Iterator([1, 2, 3, 4, 5])\nprint(next(my_iter))  print(next(my_iter))  print(next(my_iter))  # Output: 3"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Single": {
+    "prefix": "Single",
+    "body": [
+      "print(\"Hello, World!\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Symbol": {
+    "prefix": "Symbol",
+    "body": [
+      "print(\":sym:\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Doc": {
+    "prefix": "Doc",
+    "body": [
+      "def check_even_odd(num):\n    if num % 2 == 0:\n        return \"Even\"\n    else:\n        return \"Odd\""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Deleted": {
+    "prefix": "Deleted",
+    "body": [
+      "my_list = [1, 2, 3, 4, 5]\ndel my_list[2]\nprint(my_list)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Double": {
+    "prefix": "Double",
+    "body": [
+      "def double(num):\n    return num * 2\n\nnum = int(input(\"Enter a number: \"))\ndouble_num = double(num)\nprint(f\"The doubled number is: {double_num}\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Emph": {
+    "prefix": "Emph",
+    "body": [
+      "def calculate_rectangle_area(length, width):\n    area = length * width\n    return area"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Regex": {
+    "prefix": "Regex",
+    "body": [
+      "import re\n\nstring = \"This is a sentence with various words.\"\n\nmatched_words = re.findall(r\"this.*words\", string)\n\nprint(matched_words)\n\nmodified_string = re.sub(r\"various\", \"different\", string)\n\nprint(modified_string)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Interpol": {
+    "prefix": "Interpol",
+    "body": [
+      "import numpy as np\n\nx = np.array([1, 2, 3, 4, 5])  y = np.array([3, 8, 5, 12, 9])  \ninterpolated_y = np.interp(x, x[::-1], y[::-1])\n\ninterpolated_values = x[::-1] * interpolated_y"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Escape": {
+    "prefix": "Escape",
+    "body": [
+      "import sys\n\ndef escape_sequence():\n    try:\n        sequence = input(\"Enter an escape sequence (e.g., Ctrl+C): \")\n        if sequence.lower() == \"q\":\n            raise KeyboardInterrupt\n        elif sequence == \"exit\":\n            sys.exit(0)\n        else:\n            print(\"Unrecognized escape sequence. Exiting.\")\n            sys.exit(1)\n    except KeyboardInterrupt:\n        print(\"Escape sequence recognized and acted upon.\")\n\nescape_sequence()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Heredoc": {
+    "prefix": "Heredoc",
+    "body": [
+      "rst = '''\nThis is an example of a multi-line string enclosed\nin triple quotes (either single or double quotes\ncan be used, as long as they match).\n\nThis is useful when you want to include\ndocumentation or other multi-line text in your code.\n\n'''\nprint(rst)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:value": {
+    "prefix": "value",
+    "body": [
+      "x = 5\ny = 3\n\na = 10\n\nsum_result = x + y\nprint(\"Addition Result:\", sum_result)\n\nproduct = x * y\nprint(\"Multiplication Result:\", product)\n\ndifference = a - x\nprint(\"Subtraction Result:\", difference)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:in": {
+    "prefix": "in",
+    "body": [
+      "def calculate_average(numbers):\n    total = sum(numbers)\n    average = total / len(numbers)\n    return average\n\nnumber_list = [10, 20, 30, 40, 50]\nresult = calculate_average(number_list)\nprint(\"The average is:\", result)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:attr": {
+    "prefix": "attr",
+    "body": [
+      "class Person:\n        age = 30      "
+    ],
+    "description": "Python"
+  },
+  "skyHigh:for": {
+    "prefix": "for",
+    "body": [
+      "def print_message(message):\n    print(message)\n\nmessage = \"Hello, Code Assistant!\"\nprint_message(message)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:block": {
+    "prefix": "block",
+    "body": [
+      "def generate_squares():\n    squares = []\n    for i in range(1, 11):\n        squares.append(i ** 2)\n    return squares\n\nsquares_list = generate_squares()\n\nprint(squares_list)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:init_poolmanager": {
+    "prefix": "init_poolmanager",
+    "body": [
+      "from multiprocessing import Pool\n\ndef init_poolmanager(num_processes=4):\n    return Pool(processes=num_processes)\n\npool = init_poolmanager()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:__getstate__": {
+    "prefix": "__getstate__",
+    "body": [
+      "class ExampleClass:\n    def __init__(self, value):\n        self.value = value\n\n    def __getstate__(self):\n        return self.value\n\nobj = ExampleClass(10)\n\npickled_obj = pickle.dumps(obj)\n\ndeserialized_obj = pickle.loads(pickled_obj)\n\nprint(deserialized_obj.value)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:state": {
+    "prefix": "state",
+    "body": [
+      "class StateMachine:\n    def __init__(self, initial_state):\n        self.state = initial_state\n\n    def move_to_state(self, new_state):\n        self.state = new_state\n\n    def do_something(self):\n        if self.state == \"state1\":\n            print(\"Doing something specific to state1\")\n        elif self.state == \"state2\":\n            print(\"Doing something specific to state2\")\n        else:\n            print(\"Doing something generic\")\n\nmachine = StateMachine(\"state1\")\n\nmachine.move_to_state(\"state2\")\nmachine.do_something()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:getattr": {
+    "prefix": "getattr",
+    "body": [
+      "class Person:\n    def __init__(self, name):\n        self._name = name\n\n    def __getattr__(self, attr):\n        if attr == 'name':\n            return self._name\n        else:\n            raise AttributeError(f\"Attribute '{attr}' not found\")\n\nperson = Person(\"John\")\n\nprint(person.name)  print(person.age)    # Will raise AttributeError"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:__setstate__": {
+    "prefix": "__setstate__",
+    "body": [
+      "class ExampleSerializableClass:\n    def __init__(self, value):\n        self.value = value\n\n    def __setstate__(self, state):\n        self.value = state['value']\n\n    def __str__(self):\n        return f\"Value: {self.value}\"\n\nobj = ExampleSerializableClass(10)\n\nstate = obj.__dict__\n\nnew_obj = ExampleSerializableClass()\nnew_obj.__setstate__(state)\n\nprint(obj)  print(new_obj)  # Output: Value: 10"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:headers": {
+    "prefix": "headers",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:status_code": {
+    "prefix": "status_code",
+    "body": [
+      "import requests\n\nurl = 'https://www.example.com' \n\nresponse = requests.get(url)\n\nstatus_code = response.status_code\nprint(status_code)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:raw": {
+    "prefix": "raw",
+    "body": [
+      "import datetime\n\ncurrent_time = datetime.datetime.now()\n\nprint(\"The current date and time is: \")\nprint(current_time)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:connection": {
+    "prefix": "connection",
+    "body": [
+      "import mysql.connector\n\nwith mysql.connector.connect(\n    host=\"localhost\",\n    user=\"your_username\",\n    password=\"your_password\",\n    database=\"your_database\"\n) as connection:\n        # ..."
+    ],
+    "description": "Python"
+  },
+  "skyHigh:reason": {
+    "prefix": "reason",
+    "body": [
+      "def is_even_or_odd(number):\n    if number % 2 == 0:\n        print(\"The number is even.\")\n    else:\n        print(\"The number is odd.\")\n\nnumber = int(input(\"Enter a number: \"))\nis_even_or_odd(number)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Entity": {
+    "prefix": "Entity",
+    "body": [
+      "def entity(name, description):\n    return f\"The {name} is a {description}.\""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Type": {
+    "prefix": "Type",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Reserved": {
+    "prefix": "Reserved",
+    "body": [
+      "from datetime import datetime\n\ndef reserve_seat(concert_name, num_seats, email):\n    reservation_time = datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n    subject = f\"Your Reservation for the {concert_name} Concert\"\n    message = f\"You have successfully reserved {num_seats} seats for the {concert_name} concert at {reservation_time}.\\nThank you for your booking!\"\n\n    email_body = f\"Subject: {subject}\\n\\n{message}\"\n    send_email(email, email_body)\n\ndef send_email(email, email_body):\n            print(f\"Email sent to {email} successfully!\")\n\nreserve_seat(\"Symphony No. 9\", 4, \"classicalfan@example.com\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Class": {
+    "prefix": "Class",
+    "body": [
+      "class Car:\n    def __init__(self, make, model, year):\n        self.make = make\n        self.model = model\n        self.year = year\n\n    def get_manufacturer(self):\n        return self.make\n\n    def get_model(self):\n        return self.model\n\n    def get_year(self):\n        return self.year\n\n    def drive(self):\n        print(\"Vroooom! This car is now driving.\")\n\nmy_car = Car(\"Toyota\", \"Corolla\", 2022)\nprint(my_car.get_manufacturer())  print(my_car.get_model())  print(my_car.get_year())  my_car.drive()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Exception": {
+    "prefix": "Exception",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Builtin": {
+    "prefix": "Builtin",
+    "body": [
+      "import math\n\nresult = math.sqrt(25)\nprint(f\"The square root of 25 is: {result}\")\n\nfor i in range(10, 0, -1):\n    print(i)\n\nnumbers = [1, 2, 3, 4, 5]\nsum_result = sum(numbers)\nprint(f\"The sum of {numbers} is: {sum_result}\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Word": {
+    "prefix": "Word",
+    "body": [
+      "print(\"word\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Decorator": {
+    "prefix": "Decorator",
+    "body": [
+      "def decorator(func):\n    def wrapper():\n        print(\"Before function execution\")\n        func()          print(\"After function execution\")\n    return wrapper\n\n@decorator\ndef my_function():\n    print(\"This is the actual function execution\")\n\nmy_function()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Attribute": {
+    "prefix": "Attribute",
+    "body": [
+      "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nperson = Person(\"Alice\", 25)\n\nprint(person.name)\nprint(person.age)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Pseudo": {
+    "prefix": "Pseudo",
+    "body": [
+      "import random\n\ndef generate_pseudo_code(length):\n    pseudo_code = []\n    for _ in range(length):\n        char = random.choice([\".\", \"/\", \":\", \"=\", \"<\", \"!\", \"+\", \"-\", \"*\", \"^\", \"~\", \"|\", \"&\", \"?\", \"[]\", \"{\", \"}\", \":\", \";\", \",\", \".\"])\n        pseudo_code.append(char)\n    return \"\".join(pseudo_code)\n\nlength = 10\n\npseudo_code = generate_pseudo_code(length)\nprint(pseudo_code)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Tag": {
+    "prefix": "Tag",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Date": {
+    "prefix": "Date",
+    "body": [
+      "import datetime\nprint(datetime.date.today())"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Variable": {
+    "prefix": "Variable",
+    "body": [
+      "name = \"Alice\"\nage = 30"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Function": {
+    "prefix": "Function",
+    "body": [
+      "def greet(name):\n    return f\"Hello, {name}! Welcome to our code snippet function.\""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Char": {
+    "prefix": "Char",
+    "body": [
+      "def print_ascii(char_string):\n    for char in char_string:\n        print(f\" ascii_value of '{char}' is {ord(char)}\")\n\nchar_string = \"hello\"\nprint_ascii(char_string)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Label": {
+    "prefix": "Label",
+    "body": [
+      "import tkinter as tk\n\ndef create_label():\n    root = tk.Tk()\n    root.title(\"Label Demonstration\")\n    label = tk.Label(root, text=\"Hello, World!\", font=(\"Helvetica\", 20))\n    label.pack(padx=20, pady=20)\n    root.mainloop()\n\ncreate_label()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Property": {
+    "prefix": "Property",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Backtick": {
+    "prefix": "Backtick",
+    "body": [
+      "import subprocess\n\ndef execute_shell_command(command):\n    process = subprocess.run(command, shell=True, capture_output=True, text=True)\n    return process.stdout, process.stderr\n\ncommand = \"ls -l\"  \nstdout, stderr = execute_shell_command(command)\n\nif stderr:\n    print(\"Errors:\", stderr)\n\nprint(\"Output:\", stdout)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Global": {
+    "prefix": "Global",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Instance": {
+    "prefix": "Instance",
+    "body": [
+      "class Dog:\n    def __init__(self, breed, age):\n        self.breed = breed\n        self.age = age\n\n    def get_breed(self):\n        return f\"The dog is a {self.breed}\"\n\n    def get_age(self):\n        return f\"The dog is {self.age} years old.\"\n\nmy_dog = Dog(\"Golden Retriever\", 3)\n\nprint(my_dog.get_breed())\nprint(my_dog.get_age())"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Prompt": {
+    "prefix": "Prompt",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Heading": {
+    "prefix": "Heading",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Output": {
+    "prefix": "Output",
+    "body": [
+      "def generate_square_numbers(n):\n    squares = []\n    for i in range(1, n+1):\n        squares.append(i**2)\n    return squares\n\nsquare_numbers = generate_square_numbers(10)\nprint(square_numbers)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:path": {
+    "prefix": "path",
+    "body": [
+      "import os\n\npath = \"/path/to/your/file.txt\"\n\nif os.path.isfile(path):\n    print(f\"File exists at: {path}\")\nelif os.path.isdir(path):\n    print(f\"Directory exists at: {path}\")\nelse:\n    print(f\"No file or directory exists at: {path}\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Inserted": {
+    "prefix": "Inserted",
+    "body": [
+      "my_list = [1, 2, 3]\nmy_list.insert(1, 100)\nprint(my_list)"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Strong": {
+    "prefix": "Strong",
+    "body": [
+      "def is_uppercase(string):\n    return all(char.isupper() for char in string)\n\nstring = input(\"Enter a string: \")\nif is_uppercase(string):\n    print(\"The string contains only uppercase letters.\")\nelse:\n    print(\"The string contains at least one lowercase letter or special character.\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Subheading": {
+    "prefix": "Subheading",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Traceback": {
+    "prefix": "Traceback",
+    "body": [
+      ""
+    ],
+    "description": "Python"
+  },
+  "skyHigh:os": {
+    "prefix": "os",
+    "body": [
+      "import os\n\ndef main():\n        current_directory = os.getcwd()\n    print(f\"The current working directory is: {current_directory}\")\n\n        file_path = \"example.txt\"\n    if os.path.exists(file_path):\n        print(f\"File {file_path} exists.\")\n        file_size = os.path.getsize(file_path)\n        print(f\"The size of {file_path} is: {file_size} bytes.\")\n    else:\n        print(f\"File {file_path} does not exist.\")\n\n        new_directory = \"my_new_directory\"\n    if not os.path.exists(new_directory):\n        os.makedirs(new_directory)\n        print(f\"Successfully created new directory: {new_directory}\")\n    else:\n        print(f\"Directory {new_directory} already exists.\")\n\nif __name__ == \"__main__\":\n    main()"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:sys": {
+    "prefix": "sys",
+    "body": [
+      "import sys\n\nsys.exit(1)\n\ncurrent_script_path = sys.argv[0]\n\nprint(\"Python version:\", sys.version)\n\ntry:\n    import module_name\nexcept ImportError:\n    print(f\"Module '{module_name}' is not installed or cannot be imported.\")\n\nfor module in sys.modules.keys():\n    print(module)\n\nif \"ENV_VAR\" in os.environ:\n    print(\"Environment variable 'ENV_VAR' is set.\")\nelse:\n    print(\"Environment variable 'ENV_VAR' is not set.\")"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:Response": {
+    "prefix": "Response",
+    "body": [
+      "def numbers_to_string(numbers):\n    return ', '.join(map(str, numbers))\n\nnumber_list = [1, 2, 3, 4, 5]\nprint(numbers_to_string(number_list))"
+    ],
+    "description": "Python"
+  },
+  "skyHigh:structures": {
+    "prefix": "structures",
+    "body": [
+      "structures = {\n    \"structure1\": \"Description of structure1\",\n    \"structure2\": \"Description of structure2\",\n    \"structure3\": \"Description of structure3\",\n}"
+    ],
+    "description": "Python"
+  }
 }
-
-
