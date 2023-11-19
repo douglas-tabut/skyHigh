@@ -2,6 +2,7 @@
   "name": "skyhigh",
   "displayName": "SkyHigh",
   "description": "Python Code Snippet Recommender",
+  "icon":"https://github.com/douglas-tabut/skyHigh/blob/master/user-page/images/skyHigh%20logo%202.png?raw=true",
   "version": "0.0.1",
   "engines": {
     "vscode": ">=1.70.0"
