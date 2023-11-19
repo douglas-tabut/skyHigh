@@ -195,3 +195,50 @@ section{
     font-size: 50%;
   }
 }
+
+.search-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.search-container button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.loading-indicator {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  border-top: 4px solid #d3ad7f;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.search-results {
+  margin-top: 1rem;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-results li {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
