@@ -83,6 +83,13 @@ fs.writeFileSync(allSnippetsFileName, JSON.stringify(updatedData, null, 2));
     };
     code_generator()
 
+
+    /**
+     * Normalize Python code from output.
+     *
+     * @param {string | Buffer} output - The output containing Python code snippets.
+     * @returns {string} - The normalized Python code snippet.
+     */
     function normalizePythonCode(output) {
         output = output.toString();
 
@@ -93,6 +100,9 @@ fs.writeFileSync(allSnippetsFileName, JSON.stringify(updatedData, null, 2));
         return codeSnippet;
     }
 
+    /**
+     * Generate a list of unique words from tokenized code snippets and save it to a new file.
+     */
     function generateUniquewords() {
         const tokenpath = '../../data-scrapper/tokenized_code_snippets.json'; // Replace with your actual file path
         const tokenjson = JSON.parse(fs.readFileSync(tokenpath, 'utf-8'));
@@ -109,6 +119,7 @@ fs.writeFileSync(allSnippetsFileName, JSON.stringify(updatedData, null, 2));
 
         console.log(`Unique words saved to: ${outputFilePath}`);
     }
+
     // Uncomment this to generate the unique snippets json file
     // generateUniquewords()
 }
