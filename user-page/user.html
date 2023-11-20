@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SkyHigh_extension</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/skyHigh logo 2.png" alt="">
+    </a>
+
+    <nav class="navbar">
+        <div id="close" class="fas fa-times"></div>
+
+        <a href="#" class="nav_item">home</a>
+        <a href="#" class="nav_item">Doc</a>
+        <a href="#" class="nav_item">menu</a>
+        <a href="https://github.com/douglas-tabut/skyHigh.git" class="nav_item">GitHub</a>
+
+    </nav>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+</header>
+
+  <!-- End Header -->
+
+   <!-- home section starts -->
+
+   <section class="home">
+
+    <div class="content">
+        <h1 class="title">SkyHigh <span>_extension</span> AI-driven <span> Python code snippet recommender</span> </h1>
+        <p class="description">SkyHigh extension is an AI-driven Python code snippet recommender that leverages machine learning techniques to provide developers with contextually relevant code examples, improving coding efficiency and promotes knowledge sharing within the developer community.</p>
+        <a href="#" class="btn">get started</a>
+    </div>
+
+    <div class="image">
+        <img src="images/home.png" alt="" data-speed="-3" class="move">
+    </div>
+
+</section>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for code snippets...">
+    <button onclick="handleSearch()">Search</button>
+    <div id="loadingIndicator" class="loading-indicator"></div>
+</div>
+<div id="searchResults" class="search-results"></div>
+
+<!-- home section ends -->
+
+
+
+
+ <!-- GSAP CDN Link -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+ <!-- custom js file -->
+ <script src="script.js"></script>
+
+</body>
+</html>

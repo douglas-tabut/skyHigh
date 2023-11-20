@@ -1,10 +1,11 @@
 {
   "name": "skyhigh",
   "displayName": "SkyHigh",
-  "description": "Python Code Snippet Reccomender",
+  "description": "Python Code Snippet Recommender",
+  "icon":"https://github.com/douglas-tabut/skyHigh/blob/master/user-page/images/skyHigh%20logo%202.png?raw=true",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": ">=1.70.0"
   },
   "categories": [
     "Snippets"
@@ -16,5 +17,13 @@
         "path": "./snippets/snippets.json"
       }
     ]
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cohere-ai": "^7.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douglas-tabut/skyHigh/tree/dev/vscode_extension/skyhigh"
   }
 }
