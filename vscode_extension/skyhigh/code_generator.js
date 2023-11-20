@@ -20,7 +20,7 @@ const allSnippets = {}; // Array to store all generated snippets
 // Iterate through the list of words
 // I am reducing the size because cohere breaks the connection because of too many requests.
 // TODO COHERE is not able to check all our word lists... for now I am iterating ..
-// through only ten words each time e.g for (let i = 10; i < 10; i++) { to avoid errors
+// through only ten words each time e.g for (let i = 0; i < 10; i++) { to avoid errors
 
 for (let i = 0; i < wordsList.length; i++) {
 
