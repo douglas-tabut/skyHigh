@@ -4,6 +4,10 @@
 
 Welcome to the SkyHigh Code Recommender, a Visual Studio Code (VSCode) extension developed by our hackathon team. This extension leverages machine learning techniques to enhance your Python coding experience, providing contextually relevant code examples to improve coding efficiency and promote knowledge sharing within the developer community.
 
+
+![Screenshot 2023-11-18 at 23 21 15](https://github.com/douglas-tabut/skyHigh/assets/65196859/7433ad61-2df1-446d-95ae-fb0a27c553cc)
+
+
 ## Features
 
 - **AI-Driven Recommendations**: Benefit from AI-powered code snippet recommendations based on your coding context.
