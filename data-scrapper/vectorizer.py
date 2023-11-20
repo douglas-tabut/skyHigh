@@ -23,12 +23,18 @@ code_vectors = vectorizer.fit_transform(code_texts)
 # Calculate cosine similarity between -1 and 1
 cosine_similarities = cosine_similarity(code_vectors, code_vectors)
 
-def get_recommendations(code_index, num_recommendations=5):
+def get_recommendations(code_index, threshold=0.5, num_recommendations=5):
     """ function to get recommendations based on similarity"""
     similarity_scores = list(enumerate(cosine_similarities[code_index]))
     similarity_scores.sort(key=lambda x: x[1], reverse=True)
-    recommendations = similarity_scores[1:num_recommendations + 1]  # Exclude the code itself
-    return [(file_names[idx], score) for idx, score in recommendations]
+
+    # Filter out recommendations below the threshold
+    relevant_recommendations = [(file_names[idx], score) for idx, score in similarity_scores if score >= threshold]
+    
+    # Exclude the code itself
+    relevant_recommendations = relevant_recommendations[1:num_recommendations + 1]
+    
+    return relevant_recommendations
 
 # Get recommendations for each code snippet
 for idx, snippet in enumerate(tokenized_code_snippets):
