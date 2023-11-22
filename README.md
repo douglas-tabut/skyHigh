@@ -14,6 +14,10 @@ Welcome to the SkyHigh Code Recommender, a Visual Studio Code (VSCode) extension
 - **Knowledge Sharing**: Contribute to and benefit from a growing library of community-sourced code snippets.
 - **Seamless Integration**: Enjoy a smooth integration into your VSCode environment with easy-to-use features.
 
+## Demo
+
+Refer to video [here](https://www.loom.com/share/4814a85a67cc45e6ba4a090ab784704c).
+
 ## Installation
 
 1. Open VSCode.

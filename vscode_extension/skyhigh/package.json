@@ -2,8 +2,8 @@
   "name": "skyhigh",
   "displayName": "SkyHigh",
   "description": "Python Code Snippet Recommender",
-  "icon":"user-page/images/skyHigh logo 2.png",
-  "version": "0.0.1",
+  "icon":"logo.png",
+  "version": "0.0.2",
   "engines": {
     "vscode": ">=1.70.0"
   },
